@@ -1,0 +1,109 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 82%;
+    border-collapse: collapse;
+    min-width: 600px;
+    border: 1px solid #777777;
+}
+
+thead {
+    background-color: #cccccc;
+    font-size: 20px;
+
+    tr {
+        text-align: left;
+    }
+}
+
+th,
+td {
+    padding: 15px 4px;
+    border-top: 1px solid #777777;
+    border-bottom: 1px solid #777777;
+}
+
+td {
+    padding-left: 8px;
+    font-size: 17px;
+}
+
+tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+@media (max-width: 600px) {
+    table {
+        margin-left: 5px;
+        min-width: 365px;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 5px;
+    }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    td::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 45%;
+        padding: 5px 2px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    td:nth-of-type(1)::before {
+        content: "Nombre";
+    }
+
+    td:nth-of-type(2)::before {
+        content: "Entidad";
+    }
+
+    td:nth-of-type(3)::before {
+        content: "Email";
+    }
+}
+
+.btn {
+    padding: 2px 1px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.btn-edit {
+    margin-right: 12px;
+}

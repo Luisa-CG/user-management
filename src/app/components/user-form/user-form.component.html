@@ -1,0 +1,33 @@
+<form class="user-form" (ngSubmit)="saveUser()" #userForm="ngForm">
+    <h4>AGREGAR NUEVO CONTACTO</h4>
+
+    <div class="form-container">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" [(ngModel)]="userService.form.nombre" required #nombreModel="ngModel">
+            <div class="error" *ngIf="nombreModel.invalid && nombreModel.touched">
+                El nombre es obligatorio
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="entidad">Entidad</label>
+            <input type="text" name="entidad" id="entidad" [(ngModel)]="userService.form.entidad" required #entidadModel="ngModel">
+            <div class="error" *ngIf="entidadModel.invalid && entidadModel.touched">
+                La entidad es obligatoria
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" [(ngModel)]="userService.form.email" required #emailModel="ngModel">
+            <div class="error" *ngIf="emailModel.invalid && emailModel.touched">
+                El email es obligatorio.
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" [disabled]="userForm.invalid">AGREGAR</button>
+        </div>
+    </div>
+</form>

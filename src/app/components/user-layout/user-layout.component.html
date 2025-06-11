@@ -1,0 +1,38 @@
+<div>
+    <div class="form-wrapper">
+        <app-user-form></app-user-form>
+    </div>
+
+    <div>
+        <app-user-filter (selected)="search($event)"></app-user-filter>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Entidad</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userService.filterUsers">
+                    <td>{{ user.nombre}}</td>
+                    <td>{{user.entidad}}</td>
+                    <td>{{user.email}}</td>
+                    <td>
+                        <button class="btn btn-edit" (click)="userService.isUpdate(user)">
+                            Editar
+                        </button>
+
+                        <button class="btn btn-delete" (click)="deleteUser(user.id)">
+                            ❌
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
